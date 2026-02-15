@@ -1,0 +1,194 @@
+/* ============================================= */
+/* ANIMATIONS — Keyframes & scroll animations    */
+/* ============================================= */
+
+/* ---- Keyframes ---- */
+
+/* Vinyl record spin */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Scroll indicator wheel */
+@keyframes scrollWheel {
+  0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  50%  { opacity: 0.3; transform: translateX(-50%) translateY(12px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Fade in from below */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in from right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Subtle pulse for accents */
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+/* Glow pulse (retro neon feel) */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 107, 53, 0.3),
+                0 0 10px rgba(255, 107, 53, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.5),
+                0 0 25px rgba(255, 107, 53, 0.2);
+  }
+}
+
+/* Typing cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* Float animation for decorative elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ---- Scroll-triggered animation system ---- */
+
+/* Elements waiting to be revealed */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Revealed state */
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for child elements */
+.animate-on-scroll:nth-child(1) { transition-delay: 0ms; }
+.animate-on-scroll:nth-child(2) { transition-delay: 100ms; }
+.animate-on-scroll:nth-child(3) { transition-delay: 200ms; }
+.animate-on-scroll:nth-child(4) { transition-delay: 300ms; }
+.animate-on-scroll:nth-child(5) { transition-delay: 400ms; }
+.animate-on-scroll:nth-child(6) { transition-delay: 500ms; }
+
+/* Hero animations — immediate, staggered on load */
+.hero .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero .animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero .animate-on-scroll:nth-child(1) { transition-delay: 200ms; }
+.hero .animate-on-scroll:nth-child(2) { transition-delay: 400ms; }
+.hero .animate-on-scroll:nth-child(3) { transition-delay: 600ms; }
+.hero .animate-on-scroll:nth-child(4) { transition-delay: 800ms; }
+.hero .animate-on-scroll:nth-child(5) { transition-delay: 1000ms; }
+
+/* ---- Interactive micro-animations ---- */
+
+/* Button press effect */
+.btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Card hover lift */
+.project-card,
+.skill-card,
+.github__stat-card,
+.github__repo-card,
+.timeline__card {
+  will-change: transform;
+}
+
+/* Smooth transitions for nav links */
+.nav__link {
+  will-change: color;
+}
+
+/* Photo frame breathing effect */
+.about__photo-accent {
+  animation: spin 30s linear infinite;
+}
+
+/* Retro vinyl divider pulse */
+.section__divider-vinyl {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ---- Reduced motion preference ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
