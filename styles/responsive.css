@@ -1,0 +1,392 @@
+/* ============================================= */
+/* RESPONSIVE — Mobile-first breakpoints         */
+/* ============================================= */
+
+/* ---- Tablet: up to 1024px ---- */
+@media (max-width: 1024px) {
+  :root {
+    --section-gap: 80px;
+  }
+
+  .hero__vinyl-decor {
+    width: 400px;
+    right: -150px;
+  }
+
+  .about__grid {
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+  }
+
+  .skills__categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects__grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .github__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact__grid {
+    gap: 40px;
+  }
+}
+
+/* ---- Small Tablet / Large Phone: up to 768px ---- */
+@media (max-width: 768px) {
+  :root {
+    --section-gap: 64px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Navigation: Mobile menu */
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .nav__links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(320px, 85vw);
+    height: 100vh;
+    background: var(--color-bg-alt);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 32px 32px;
+    gap: 0;
+    box-shadow: var(--shadow-xl);
+    transition: right var(--transition-slow);
+    z-index: 999;
+    border-left: 1px solid var(--color-border);
+  }
+
+  .nav__links.open {
+    right: 0;
+  }
+
+  .nav__link {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav__link::after {
+    display: none;
+  }
+
+  /* Mobile overlay */
+  .nav__links.open::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: -1;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 100px 20px 60px;
+    min-height: 100svh;
+  }
+
+  .hero__vinyl-decor {
+    width: 300px;
+    right: -120px;
+    opacity: 0.05;
+  }
+
+  .hero__name {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
+
+  .hero__tagline {
+    font-size: 0.95rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .hero__scroll-indicator {
+    display: none;
+  }
+
+  /* About */
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .about__photo-frame {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about__content {
+    max-width: none;
+  }
+
+  .about__highlights li {
+    justify-content: center;
+  }
+
+  .about__socials {
+    justify-content: center;
+  }
+
+  /* Skills */
+  .skills__categories {
+    grid-template-columns: 1fr;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  }
+
+  /* Projects */
+  .projects__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section__header {
+    margin-bottom: 40px;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: 30px;
+  }
+
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline__dot {
+    left: -26px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline__card {
+    padding: 20px;
+  }
+
+  /* GitHub */
+  .github__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .github__stat-card {
+    padding: 16px 12px;
+  }
+
+  .github__stat-number {
+    font-size: 1.5rem;
+  }
+
+  .github__graph {
+    grid-template-columns: repeat(26, 1fr);
+  }
+
+  .github__repos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact */
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact__form {
+    padding: 24px;
+  }
+
+  /* Footer */
+  .footer__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .footer__socials {
+    justify-content: center;
+  }
+}
+
+/* ---- Small Phone: up to 480px ---- */
+@media (max-width: 480px) {
+  :root {
+    --section-gap: 56px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero__greeting {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+  }
+
+  .hero__name {
+    font-size: 2.2rem;
+  }
+
+  .hero__title {
+    font-size: 1rem;
+  }
+
+  .hero__tagline {
+    font-size: 0.88rem;
+  }
+
+  .section__title {
+    font-size: 1.8rem;
+  }
+
+  .about__photo-frame {
+    width: 160px;
+    height: 160px;
+  }
+
+  .skills__category {
+    padding: 24px;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .skill-card {
+    padding: 12px 6px;
+  }
+
+  .skill-card__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .skill-card__name {
+    font-size: 0.72rem;
+  }
+
+  .project-card__thumb {
+    height: 160px;
+  }
+
+  .project-card__body {
+    padding: 18px;
+  }
+
+  .github__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .github__stat-number {
+    font-size: 1.3rem;
+  }
+
+  .github__graph-wrapper {
+    padding: 16px;
+  }
+
+  .timeline {
+    padding-left: 24px;
+  }
+
+  .nav__container {
+    height: 56px;
+  }
+}
+
+/* ---- Large screens: 1400px+ ---- */
+@media (min-width: 1400px) {
+  :root {
+    --container-max: 1300px;
+    --section-gap: 120px;
+  }
+
+  .hero__vinyl-decor {
+    width: 600px;
+    right: -80px;
+    opacity: 0.1;
+  }
+}
+
+/* ---- Print styles ---- */
+@media print {
+  .nav,
+  .loader,
+  .hero__scroll-indicator,
+  .hero__vinyl-decor,
+  .hero__scanlines,
+  .footer__socials,
+  .contact__form,
+  .projects__filters {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+    font-size: 12pt;
+  }
+
+  .section {
+    padding: 24pt 0;
+    break-inside: avoid;
+  }
+
+  .hero {
+    min-height: auto;
+    background: none;
+    color: #000;
+    padding: 24pt 0;
+  }
+
+  .hero__name,
+  .hero__title,
+  .hero__tagline {
+    color: #000;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .project-card,
+  .skill-card,
+  .timeline__card {
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}
