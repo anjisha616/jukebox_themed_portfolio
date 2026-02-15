@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anjisha Pun — UI/UX Designer & Frontend Developer crafting intuitive, visually compelling digital experiences.">
+  <meta name="keywords" content="UI/UX Designer, Frontend Developer, Portfolio, Anjisha Pun, Web Development, React, Figma">
+  <meta name="author" content="Anjisha Pun">
+  <meta property="og:title" content="Anjisha Pun — UI/UX Designer & Frontend Developer">
+  <meta property="og:description" content="Crafting intuitive, visually compelling digital experiences.">
+  <meta property="og:type" content="website">
+  <title>Anjisha Pun — UI/UX Designer & Frontend Developer</title>
+
+  <!-- Favicon: vinyl record -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231a1a2e'/><circle cx='50' cy='50' r='18' fill='%23ff6b35'/><circle cx='50' cy='50' r='6' fill='%231a1a2e'/><circle cx='50' cy='50' r='38' fill='none' stroke='%232a2a4e' stroke-width='0.5'/><circle cx='50' cy='50' r='32' fill='none' stroke='%232a2a4e' stroke-width='0.5'/><circle cx='50' cy='50' r='26' fill='none' stroke='%232a2a4e' stroke-width='0.5'/></svg>" type="image/svg+xml">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <!-- Skip to Content (Accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Loading Screen: Spinning Vinyl -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__vinyl">
+      <div class="loader__vinyl-groove"></div>
+      <div class="loader__vinyl-groove loader__vinyl-groove--2"></div>
+      <div class="loader__vinyl-groove loader__vinyl-groove--3"></div>
+      <div class="loader__vinyl-label"></div>
+    </div>
+    <p class="loader__text">Loading the setlist&hellip;</p>
+  </div>
+
+  <!-- ============================================= -->
+  <!-- NAVIGATION — Sticky top bar                   -->
+  <!-- ============================================= -->
+  <header class="nav" id="nav" role="banner">
+    <div class="nav__container">
+      <!-- Logo with subtle vinyl icon -->
+      <a href="#hero" class="nav__logo" aria-label="Home">
+        <svg class="nav__vinyl-icon" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <circle cx="16" cy="16" r="15" fill="#1a1a2e"/>
+          <circle cx="16" cy="16" r="6" fill="#ff6b35"/>
+          <circle cx="16" cy="16" r="2" fill="#1a1a2e"/>
+          <circle cx="16" cy="16" r="12" fill="none" stroke="#2a2a4e" stroke-width="0.5"/>
+          <circle cx="16" cy="16" r="9.5" fill="none" stroke="#2a2a4e" stroke-width="0.5"/>
+        </svg>
+        <span class="nav__name">Anjisha Pun</span>
+      </a>
+
+      <!-- Mobile hamburger -->
+      <button class="nav__hamburger" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Nav links -->
+      <nav class="nav__links" id="navLinks" role="navigation" aria-label="Main navigation">
+        <a href="#about" class="nav__link" data-section="about">About</a>
+        <a href="#skills" class="nav__link" data-section="skills">Skills</a>
+        <a href="#projects" class="nav__link" data-section="projects">Projects</a>
+        <a href="#experience" class="nav__link" data-section="experience">Experience</a>
+        <a href="#github" class="nav__link" data-section="github">GitHub</a>
+        <a href="#contact" class="nav__link" data-section="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ============================================= -->
+    <!-- HERO SECTION — Above the fold                 -->
+    <!-- ============================================= -->
+    <section class="hero" id="hero">
+      <!-- Subtle decorative vinyl record -->
+      <div class="hero__vinyl-decor" aria-hidden="true">
+        <div class="hero__vinyl-record">
+          <div class="hero__vinyl-groove"></div>
+          <div class="hero__vinyl-groove hero__vinyl-groove--2"></div>
+          <div class="hero__vinyl-groove hero__vinyl-groove--3"></div>
+          <div class="hero__vinyl-label">
+            <span>SIDE A</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtle scanline overlay -->
+      <div class="hero__scanlines" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="hero__greeting animate-on-scroll">Hello, I'm</p>
+        <h1 class="hero__name animate-on-scroll">Anjisha Pun</h1>
+        <p class="hero__title animate-on-scroll">
+          <span class="hero__title-accent">UI/UX Designer</span> &amp; 
+          <span class="hero__title-accent">Frontend Developer</span>
+        </p>
+        <p class="hero__tagline animate-on-scroll">
+          Crafting intuitive, visually compelling digital experiences — 
+          where design thinking meets technical implementation.
+        </p>
+        <div class="hero__actions animate-on-scroll">
+          <a href="#projects" class="btn btn--primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            View Projects
+          </a>
+          <a href="#contact" class="btn btn--secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Contact Me
+          </a>
+          <a href="#" class="btn btn--outline" id="resumeBtn" aria-label="Download resume (coming soon)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <div class="hero__scroll-mouse">
+          <div class="hero__scroll-wheel"></div>
+        </div>
+        <span>Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ABOUT SECTION                                 -->
+    <!-- ============================================= -->
+    <section class="section about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">Get to know me</span>
+          <h2 class="section__title" id="about-heading">About Me</h2>
+          <div class="section__divider">
+            <div class="section__divider-vinyl" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__photo-wrapper animate-on-scroll">
+            <div class="about__photo-frame">
+              <!-- Placeholder avatar - can be replaced with actual photo -->
+              <div class="about__photo-placeholder" aria-label="Anjisha Pun">
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="100" cy="100" r="100" fill="#1a1a2e"/>
+                  <circle cx="100" cy="78" r="35" fill="#ff6b35" opacity="0.8"/>
+                  <ellipse cx="100" cy="155" rx="55" ry="45" fill="#ff6b35" opacity="0.6"/>
+                  <text x="100" y="105" text-anchor="middle" fill="white" font-size="42" font-family="Space Grotesk">AP</text>
+                </svg>
+              </div>
+              <div class="about__photo-accent" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="about__content animate-on-scroll">
+            <p class="about__bio">
+              I'm a <strong>UI/UX designer and frontend developer</strong> based in 
+              <span class="about__highlight">Butwal, Nepal</span>, specializing in crafting 
+              intuitive, visually compelling digital experiences.
+            </p>
+            <p class="about__bio">
+              Proficient in HTML, CSS, and JavaScript, with growing expertise in 
+              <strong>React</strong> and <strong>Next.js</strong>. I combine design thinking 
+              with technical implementation, backed by knowledge in Django and Python for a 
+              full-stack perspective.
+            </p>
+            <ul class="about__highlights">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Design-driven development with Figma &amp; Canva
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Responsive, accessible web interfaces
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Bridging the gap between design and code
+              </li>
+            </ul>
+
+            <div class="about__socials">
+              <a href="https://github.com/anjisha616" target="_blank" rel="noopener noreferrer" class="about__social-link" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/anjisha-pun-aaa1a6349/" target="_blank" rel="noopener noreferrer" class="about__social-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:punangisha@gmail.com" class="about__social-link" aria-label="Email">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SKILLS SECTION                                -->
+    <!-- ============================================= -->
+    <section class="section skills" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">What I work with</span>
+          <h2 class="section__title" id="skills-heading">Skills &amp; Tools</h2>
+          <div class="section__divider">
+            <div class="section__divider-vinyl" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="skills__categories">
+          <!-- Design Tools -->
+          <div class="skills__category animate-on-scroll">
+            <div class="skills__category-header">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <h3>Design</h3>
+            </div>
+            <div class="skills__grid">
+              <div class="skill-card">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 38 57" width="28" height="28"><path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/><path fill="#0acf83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/><path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/><path fill="#f24e1e" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/><path fill="#a259ff" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/></svg>
+                </div>
+                <span class="skill-card__name">Figma</span>
+              </div>
+              <div class="skill-card">
+                <div class="skill-card__icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#7B61FF"><path d="M4.486 3C3.116 3 2 4.116 2 5.486v13.028C2 19.884 3.116 21 4.486 21h15.028C20.884 21 22 19.884 22 18.514V5.486C22 4.116 20.884 3 19.514 3H4.486zm5.9 2.184l1.327 3.754h3.948l-3.193 2.32 1.22 3.755L10.386 12.7l-3.302 2.313 1.22-3.755-3.193-2.32h3.948l1.327-3.754z"/></svg>
+                </div>
+                <span class="skill-card__name">Canva</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skills__category animate-on-scroll">
+            <div class="skills__category-header">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <h3>Frontend</h3>
+            </div>
+            <div class="skills__grid">
+              <div class="skill-card">
+                <div class="skill-card__icon skill-card__icon--html">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#E34F26"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.076-.757.076-.771.076-.756H6.862l.711 7.972h7.789l-.282 3.26-3.088.84-3.094-.84-.204-2.246H6.14l.369 4.325L11.985 20l5.487-1.736.67-7.514H8.531z"/></svg>
+                </div>
+                <span class="skill-card__name">HTML</span>
+              </div>
+              <div class="skill-card">
+                <div class="skill-card__icon skill-card__icon--css">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#1572B6"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716H8.471l.224 2.483h6.518l-.31 3.467-2.912.788-2.924-.788-.188-2.07H6.348l.33 4.327L11.991 20l5.299-1.503.67-7.514H8.531z"/></svg>
+                </div>
+                <span class="skill-card__name">CSS</span>
+              </div>
+              <div class="skill-card">
+                <div class="skill-card__icon skill-card__icon--js">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#F7DF1E"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.405-.6-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-1.95 0-3.9 0-5.855v-.38z"/></svg>
+                </div>
+                <span class="skill-card__name">JavaScript</span>
+              </div>
+              <div class="skill-card">
+                <div class="skill-card__icon skill-card__icon--react">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#61DAFB"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.31 0-.594.068-.843.197-.686.386-1.049 1.266-.997 2.543.026.616.164 1.32.415 2.088C2.427 7.833.946 10.093.946 12c0 1.907 1.482 4.166 4.046 5.845-.252.77-.39 1.473-.416 2.088-.052 1.278.31 2.158.997 2.544.249.128.533.196.843.196 1.346 0 3.107-.96 4.888-2.622 1.78 1.654 3.542 2.603 4.887 2.603.31 0 .594-.068.843-.196.686-.386 1.049-1.266.997-2.544-.026-.615-.164-1.318-.415-2.088C20.573 16.166 22.054 13.907 22.054 12c0-1.907-1.48-4.167-4.046-5.845.252-.77.39-1.472.416-2.088.052-1.277-.311-2.157-.997-2.543-.249-.13-.533-.197-.843-.197zm-.084 1.698c.158 0 .293.03.395.09.27.153.466.62.43 1.428-.018.4-.116.867-.277 1.38a16.23 16.23 0 0 0-3.195-1.566 16.236 16.236 0 0 0-1.8-2.586c1.346-1.213 2.647-1.946 3.447-1.946V3.01h.001zm-9.578 0c.798 0 2.1.736 3.447 1.949a16.078 16.078 0 0 0-1.8 2.584A16.21 16.21 0 0 0 5.67 9.11c-.16-.514-.258-.981-.277-1.38-.036-.81.16-1.276.43-1.428a.684.684 0 0 1 .396-.09zM12 8.1c.74 0 1.477.092 2.186.267a14.25 14.25 0 0 1 1.447 2.03c.507.86.952 1.76 1.328 2.696a14.836 14.836 0 0 1-1.328 2.696c-.472.82-1.02 1.582-1.622 2.27A13.17 13.17 0 0 1 12 18.3a13.17 13.17 0 0 1-2.01-.241 14.253 14.253 0 0 1-1.623-2.27 14.836 14.836 0 0 1-1.328-2.696c.376-.936.82-1.836 1.328-2.696a14.25 14.25 0 0 1 1.447-2.03A13.17 13.17 0 0 1 12 8.1zm-4.87 3.012h-.001c-.72.294-1.373.62-1.944.97C3.48 13.287 2.746 14.603 2.746 12c0-2.604.735-3.288 2.44-4.083.57.35 1.224.676 1.943.97a16.49 16.49 0 0 0 .541 3.128c-.2 1.047-.36 2.08-.541 3.125v-.028zM12 20.99v.01c-.799 0-2.1-.736-3.447-1.949a16.08 16.08 0 0 0 1.8-2.584 16.21 16.21 0 0 0 3.194 1.566c.161.514.259.981.278 1.38.036.81-.16 1.276-.43 1.428-.103.06-.237.09-.395.09v.06zm4.87-9.878c.2 1.047.362 2.078.541 3.125a16.476 16.476 0 0 0-.541 3.128c-.72-.294-1.373-.621-1.943-.97 1.704-.796 2.439-1.48 2.439-4.084 0-2.603-.735-3.287-2.44-4.082.571-.35 1.225-.677 1.944-.971v-.146z"/></svg>
+                </div>
+                <span class="skill-card__name">React</span>
+                <span class="skill-card__badge">Learning</span>
+              </div>
+              <div class="skill-card">
+                <div class="skill-card__icon skill-card__icon--next">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.86-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.5-.054z"/></svg>
+                </div>
+                <span class="skill-card__name">Next.js</span>
+                <span class="skill-card__badge">Learning</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skills__category animate-on-scroll">
+            <div class="skills__category-header">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              <h3>Backend</h3>
+            </div>
+            <div class="skills__grid">
+              <div class="skill-card">
+                <div class="skill-card__icon skill-card__icon--python">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#3776AB"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.09l-.33.03-.32.06-.3.09-.27.12-.24.15-.2.17-.17.19-.13.21-.09.22-.06.22-.03.22v.57l.05.19.1.17.16.15.21.12.27.1.32.06.37.04.42.01.37-.03.33-.08.28-.12.23-.16.2-.19.15-.22.11-.24.07-.25.04-.26.01-.26-.01-.26-.05-.25-.09-.24-.13-.22-.17-.19-.22-.16-.27-.12-.33-.08-.38-.04h-.35zm4.39 5.61l.07.16.06.23.03.25v.19l-.04.32-.1.28-.16.24-.2.2-.26.15-.3.1-.35.07-.38.04h-.43l-.38-.02-.33-.07-.27-.1-.2-.14-.13-.17-.07-.2-.02-.2.01-.18.05-.16.08-.14.12-.12.16-.1.21-.07.26-.05.3-.03.34-.01h.43l.38.03.32.07.26.1.2.14.13.17.07.2zm4.68-.67l.04.32.02.25-.01.26-.05.25-.09.23-.13.2-.17.18-.22.15-.27.11-.33.08-.38.04h-.35l-.38-.04-.33-.07-.27-.1-.23-.14-.18-.17-.14-.2-.09-.22-.05-.24-.02-.25v-.57l.01-.22.03-.22.06-.22.09-.22.13-.21.17-.19.2-.17.24-.15.27-.12.3-.09.32-.06.33-.03h.35l.42.01.37.04.32.06.27.1.21.12.16.15.1.17.05.19v.57z"/></svg>
+                </div>
+                <span class="skill-card__name">Python</span>
+              </div>
+              <div class="skill-card">
+                <div class="skill-card__icon skill-card__icon--django">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#092E20"><path d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-3.995 2.688-6.589 6.858-6.589.497 0 .877.043 1.602.152V0zm0 9.143c-.44-.101-.764-.152-1.224-.152-1.96 0-3.11 1.211-3.11 3.262 0 2.005 1.1 3.108 3.161 3.108.395 0 .718-.026 1.173-.101V9.143zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.039-3.211 2.905l-3.644-1.733c1.733-.815 2.574-1.53 3.109-2.625.561-1.121.739-2.421.739-5.835V6.059h3.924zM17.39.021h3.924v4.026H17.39V.021z"/></svg>
+                </div>
+                <span class="skill-card__name">Django</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skills__category animate-on-scroll">
+            <div class="skills__category-header">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <h3>Soft Skills</h3>
+            </div>
+            <div class="skills__grid">
+              <div class="skill-card">
+                <div class="skill-card__icon skill-card__icon--soft">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ff6b35" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <span class="skill-card__name">Presentation</span>
+              </div>
+              <div class="skill-card">
+                <div class="skill-card__icon skill-card__icon--soft">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ff6b35" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <span class="skill-card__name">Communication</span>
+              </div>
+              <div class="skill-card">
+                <div class="skill-card__icon skill-card__icon--soft">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ff6b35" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                </div>
+                <span class="skill-card__name">Musician</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- PROJECTS SECTION — The star of the show       -->
+    <!-- ============================================= -->
+    <section class="section projects" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">My work</span>
+          <h2 class="section__title" id="projects-heading">Featured Projects</h2>
+          <div class="section__divider">
+            <div class="section__divider-vinyl" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- Filter buttons -->
+        <div class="projects__filters animate-on-scroll" role="tablist" aria-label="Project filters">
+          <button class="projects__filter active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="projects__filter" data-filter="github" role="tab" aria-selected="false">GitHub</button>
+          <button class="projects__filter" data-filter="figma" role="tab" aria-selected="false">Figma</button>
+        </div>
+
+        <!-- Projects grid -->
+        <div class="projects__grid" id="projectsGrid" role="tabpanel">
+          <!-- Placeholder cards (will be replaced by JS) -->
+          <div class="project-card project-card--loading animate-on-scroll" aria-hidden="true">
+            <div class="project-card__shimmer"></div>
+          </div>
+          <div class="project-card project-card--loading animate-on-scroll" aria-hidden="true">
+            <div class="project-card__shimmer"></div>
+          </div>
+          <div class="project-card project-card--loading animate-on-scroll" aria-hidden="true">
+            <div class="project-card__shimmer"></div>
+          </div>
+        </div>
+
+        <!-- Figma projects heading -->
+        <div class="projects__figma-header animate-on-scroll" id="figmaSection">
+          <h3 class="projects__sub-heading">Design Work</h3>
+          <p class="projects__sub-desc">UI/UX projects crafted in Figma</p>
+        </div>
+
+        <div class="projects__grid projects__grid--figma" id="figmaGrid">
+          <!-- Figma project cards populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- EXPERIENCE / TIMELINE                         -->
+    <!-- ============================================= -->
+    <section class="section experience" id="experience" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">My journey</span>
+          <h2 class="section__title" id="experience-heading">Experience</h2>
+          <div class="section__divider">
+            <div class="section__divider-vinyl" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__item animate-on-scroll">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__card">
+              <span class="timeline__date">2024 &mdash; Present</span>
+              <h3 class="timeline__title">Building Portfolio &amp; Learning</h3>
+              <p class="timeline__company">Self-directed &middot; Butwal, Nepal</p>
+              <p class="timeline__desc">
+                Actively building projects to strengthen frontend skills. Developing 
+                real-world applications with HTML, CSS, JavaScript, and React while 
+                deepening expertise in UI/UX design through Figma.
+              </p>
+              <div class="timeline__tags">
+                <span class="tag">HTML/CSS/JS</span>
+                <span class="tag">React</span>
+                <span class="tag">Figma</span>
+                <span class="tag">UI/UX</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline__item animate-on-scroll">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__card">
+              <span class="timeline__date">2024</span>
+              <h3 class="timeline__title">Personal &amp; Freelance Projects</h3>
+              <p class="timeline__company">Independent</p>
+              <p class="timeline__desc">
+                Designed and developed multiple web projects including portfolio sites, 
+                clone projects for practice, and original designs. Contributed to open 
+                source and built a diverse project portfolio.
+              </p>
+              <div class="timeline__tags">
+                <span class="tag">Web Development</span>
+                <span class="tag">UI Design</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline__item timeline__item--cta animate-on-scroll">
+            <div class="timeline__dot timeline__dot--accent" aria-hidden="true"></div>
+            <div class="timeline__card timeline__card--cta">
+              <h3 class="timeline__title">Looking for Opportunities</h3>
+              <p class="timeline__desc">
+                Actively seeking frontend developer and UI/UX design roles. 
+                Open to internships, freelance, and full-time positions.
+              </p>
+              <a href="#contact" class="btn btn--primary btn--sm">Let's Work Together</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- GITHUB / PROOF OF WORK                        -->
+    <!-- ============================================= -->
+    <section class="section github-section" id="github" aria-labelledby="github-heading">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">Proof of work</span>
+          <h2 class="section__title" id="github-heading">GitHub Activity</h2>
+          <div class="section__divider">
+            <div class="section__divider-vinyl" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="github__content">
+          <!-- Stats cards -->
+          <div class="github__stats animate-on-scroll" id="githubStats">
+            <div class="github__stat-card">
+              <div class="github__stat-number" id="totalRepos">--</div>
+              <div class="github__stat-label">Public Repos</div>
+            </div>
+            <div class="github__stat-card">
+              <div class="github__stat-number" id="totalCommits">--</div>
+              <div class="github__stat-label">Recent Events</div>
+            </div>
+            <div class="github__stat-card">
+              <div class="github__stat-number" id="topLanguage">--</div>
+              <div class="github__stat-label">Top Language</div>
+            </div>
+            <div class="github__stat-card">
+              <div class="github__stat-number" id="totalStars">--</div>
+              <div class="github__stat-label">Stars Earned</div>
+            </div>
+          </div>
+
+          <!-- Contribution graph -->
+          <div class="github__graph-wrapper animate-on-scroll">
+            <h3 class="github__graph-title">Contribution Activity</h3>
+            <div class="github__graph" id="contributionGraph" aria-label="GitHub contribution graph">
+              <!-- Generated by JS -->
+            </div>
+            <div class="github__graph-legend">
+              <span>Less</span>
+              <div class="github__graph-legend-squares">
+                <div class="github__graph-square" style="background: #161b22"></div>
+                <div class="github__graph-square" style="background: #0e4429"></div>
+                <div class="github__graph-square" style="background: #006d32"></div>
+                <div class="github__graph-square" style="background: #26a641"></div>
+                <div class="github__graph-square" style="background: #39d353"></div>
+              </div>
+              <span>More</span>
+            </div>
+          </div>
+
+          <!-- Featured repos -->
+          <div class="github__repos animate-on-scroll">
+            <h3 class="github__repos-title">Pinned Repositories</h3>
+            <div class="github__repos-grid" id="pinnedRepos">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <div class="github__cta animate-on-scroll">
+            <a href="https://github.com/anjisha616" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              View Full GitHub Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- CONTACT SECTION                               -->
+    <!-- ============================================= -->
+    <section class="section contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">Get in touch</span>
+          <h2 class="section__title" id="contact-heading">Contact Me</h2>
+          <div class="section__divider">
+            <div class="section__divider-vinyl" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="contact__grid">
+          <!-- Contact info -->
+          <div class="contact__info animate-on-scroll">
+            <p class="contact__intro">
+              I'm always open to discussing new projects, creative ideas, 
+              or opportunities to be part of your team.
+            </p>
+
+            <div class="contact__details">
+              <div class="contact__detail">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:punangisha@gmail.com">punangisha@gmail.com</a>
+              </div>
+              <div class="contact__detail">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Butwal, Nepal</span>
+              </div>
+              <div class="contact__detail">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="#ff6b35" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <a href="https://www.linkedin.com/in/anjisha-pun-aaa1a6349/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+              <div class="contact__detail">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="#ff6b35" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <a href="https://github.com/anjisha616" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact form -->
+          <form class="contact__form animate-on-scroll" id="contactForm" novalidate>
+            <div class="form__group">
+              <label for="name" class="form__label">Name</label>
+              <input type="text" id="name" name="name" class="form__input" placeholder="Your name" required autocomplete="name" aria-required="true">
+              <span class="form__error" id="nameError" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label for="email" class="form__label">Email</label>
+              <input type="email" id="email" name="email" class="form__input" placeholder="your@email.com" required autocomplete="email" aria-required="true">
+              <span class="form__error" id="emailError" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label for="subject" class="form__label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form__input" placeholder="What's this about?">
+            </div>
+            <div class="form__group">
+              <label for="message" class="form__label">Message</label>
+              <textarea id="message" name="message" class="form__input form__textarea" placeholder="Your message..." rows="5" required aria-required="true"></textarea>
+              <span class="form__error" id="messageError" role="alert"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+              <span class="btn__text">Send Message</span>
+              <span class="btn__loading" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </span>
+            </button>
+            <div class="form__success" id="formSuccess" role="status" aria-live="polite" hidden>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0acf83" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <p>Message sent! I'll get back to you soon.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================= -->
+  <!-- FOOTER                                        -->
+  <!-- ============================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__left">
+          <div class="footer__logo">
+            <svg class="footer__vinyl-spin" viewBox="0 0 32 32" width="24" height="24" aria-hidden="true">
+              <circle cx="16" cy="16" r="15" fill="#1a1a2e"/>
+              <circle cx="16" cy="16" r="6" fill="#ff6b35"/>
+              <circle cx="16" cy="16" r="2" fill="#1a1a2e"/>
+              <circle cx="16" cy="16" r="12" fill="none" stroke="#2a2a4e" stroke-width="0.5"/>
+              <circle cx="16" cy="16" r="9" fill="none" stroke="#2a2a4e" stroke-width="0.5"/>
+            </svg>
+            <span>Anjisha Pun</span>
+          </div>
+          <p class="footer__tagline">Designing &amp; developing the future, one pixel at a time.</p>
+        </div>
+
+        <div class="footer__links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer__socials">
+          <a href="https://github.com/anjisha616" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/anjisha-pun-aaa1a6349/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:punangisha@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Anjisha Pun. Crafted with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/github-api.js"></script>
+  <script src="scripts/animations.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
