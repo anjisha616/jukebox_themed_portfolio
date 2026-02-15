@@ -1034,31 +1034,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initCoinSequence() {
     const overlay = document.getElementById('coinOverlay');
-    
-    // Play coin drop sound
-    setTimeout(() => {
+    const coinSlotButton = document.querySelector('.coin-slot-control .slot');
+    let hasStarted = false;
+
+    if (!overlay) return;
+
+    const startSequence = () => {
+        if (hasStarted) return;
+        hasStarted = true;
+
+        if (audioContext && audioContext.state === 'suspended') {
+            audioContext.resume().catch(() => {});
+        }
+
+        // Play coin drop sound
         playSound('coinDrop');
-    }, 500);
-    
-    // Play motor sound
-    setTimeout(() => {
-        playSound('motor');
-    }, 2000);
-    
-    // Remove overlay and start music
-    setTimeout(() => {
-        overlay.classList.remove('active');
-        startBackgroundMusic();
-        state.isPlaying = true;
-        
-        // Activate vinyl spinning
-        const vinyl = document.getElementById('vinylRecord');
-        vinyl.classList.add('spinning');
-        
-        // Move tonearm
-        const tonearm = document.getElementById('tonearm');
-        tonearm.classList.add('playing');
-    }, 3000);
+
+        // Play motor sound
+        setTimeout(() => {
+            playSound('motor');
+        }, 1200);
+
+        // Remove overlay and start music
+        setTimeout(() => {
+            overlay.classList.remove('active');
+            startBackgroundMusic();
+            state.isPlaying = true;
+
+            // Activate vinyl spinning
+            const vinyl = document.getElementById('vinylRecord');
+            if (vinyl) {
+                vinyl.classList.add('spinning');
+            }
+
+            // Move tonearm
+            const tonearm = document.getElementById('tonearm');
+            if (tonearm) {
+                tonearm.classList.add('playing');
+            }
+        }, 1500);
+    };
+
+    const triggerFromUser = (event) => {
+        if (event) {
+            event.preventDefault();
+        }
+        startSequence();
+    };
+
+    overlay.addEventListener('click', triggerFromUser);
+    overlay.addEventListener('touchstart', triggerFromUser, { passive: false });
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            triggerFromUser(event);
+        }
+    });
+
+    if (coinSlotButton) {
+        coinSlotButton.addEventListener('click', triggerFromUser);
+    }
 }
 
 // ============================================
