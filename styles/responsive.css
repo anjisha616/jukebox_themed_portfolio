@@ -1,0 +1,509 @@
+/* ============================================================
+   RESPONSIVE.CSS — Breakpoints & Mobile Adaptations
+   Wurlitzer Jukebox Portfolio
+   ============================================================ */
+
+/* ═══════════════════════════════════════════════════════════════
+   TABLET (768px - 1023px)
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 1023px) {
+  .jukebox-body {
+    grid-template-columns: 40px 1fr 40px auto;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+  }
+
+  .bubble-tube__glass {
+    width: 22px;
+  }
+
+  .turntable {
+    width: 200px;
+    height: 200px;
+  }
+
+  .turntable__platter {
+    width: 180px;
+    height: 180px;
+  }
+
+  .turntable__record {
+    width: 165px;
+    height: 165px;
+  }
+
+  .record__label {
+    width: 55px;
+    height: 55px;
+  }
+
+  .record__label-title {
+    font-size: 0.4rem;
+    max-width: 42px;
+  }
+
+  .turntable__arm-bar {
+    height: 90px;
+  }
+
+  .turntable__arm-head {
+    top: 96px;
+  }
+
+  .button-panel {
+    min-width: 180px;
+    padding: var(--space-sm);
+  }
+
+  .button-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xs);
+  }
+
+  .juke-btn {
+    min-height: 44px;
+    padding: var(--space-xs);
+  }
+
+  .juke-btn__code {
+    font-size: 0.75rem;
+  }
+
+  .juke-btn__label {
+    font-size: 0.45rem;
+  }
+
+  .content-display {
+    padding: var(--space-xl);
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .section-about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-info__socials {
+    justify-content: center;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE (<768px)
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  body {
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  }
+
+  .jukebox-wrapper {
+    padding: var(--space-sm);
+  }
+
+  /* Neon Sign — Compact */
+  .neon-sign {
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .neon-sign__note {
+    font-size: 1.2rem;
+  }
+
+  .jukebox-header__subtitle {
+    font-size: 0.8rem;
+  }
+
+  /* Jukebox Body — Stacked Vertical Layout */
+  .jukebox-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  /* Hide bubble tubes on mobile */
+  .bubble-tube {
+    display: none;
+  }
+
+  /* Hide button panel on mobile (use mobile menu instead) */
+  .button-panel {
+    display: none;
+  }
+
+  /* Show mobile menu */
+  .mobile-menu {
+    display: block !important;
+  }
+
+  /* Center section — full width */
+  .jukebox-center {
+    gap: var(--space-md);
+  }
+
+  .turntable {
+    width: 180px;
+    height: 180px;
+  }
+
+  .turntable__platter {
+    width: 160px;
+    height: 160px;
+  }
+
+  .turntable__record {
+    width: 145px;
+    height: 145px;
+  }
+
+  .record__label {
+    width: 50px;
+    height: 50px;
+  }
+
+  .record__label-title {
+    font-size: 0.35rem;
+    max-width: 38px;
+  }
+
+  .turntable__arm-bar {
+    height: 80px;
+  }
+
+  .turntable__arm-head {
+    top: 86px;
+  }
+
+  /* Now Playing — full width */
+  .now-playing {
+    max-width: 100%;
+  }
+
+  /* Vinyl Carousel — swipe-friendly */
+  .vinyl-carousel {
+    max-width: 100%;
+  }
+
+  .mini-vinyl {
+    width: 48px;
+    height: 48px;
+  }
+
+  .mini-vinyl__label {
+    width: 18px;
+    height: 18px;
+    font-size: 0.4rem;
+  }
+
+  /* Controls — Wrap compact */
+  .jukebox-controls {
+    gap: var(--space-md);
+    padding: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .volume-control__dial {
+    width: 40px;
+    height: 40px;
+  }
+
+  .volume-control__label {
+    font-size: 0.65rem;
+  }
+
+  /* Content Display — Compact padding */
+  .content-display {
+    padding: var(--space-lg) var(--space-md);
+    margin-top: var(--space-md);
+    border-radius: var(--radius-lg);
+  }
+
+  /* Skills Grid — Fewer columns */
+  .skill-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--space-sm);
+  }
+
+  /* Projects Grid — Single column */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Contact — Stack */
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* GitHub Stats — 2 columns */
+  .github-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Heatmap — Smaller cells */
+  .heatmap-cell {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Simplified neon effects for performance */
+  .neon-text {
+    text-shadow:
+      0 0 5px currentColor,
+      0 0 10px currentColor;
+  }
+
+  .neon-sign {
+    box-shadow: 0 0 8px var(--neon-pink);
+  }
+
+  /* Footer */
+  .jukebox-footer__text {
+    font-size: 0.8rem;
+  }
+
+  /* Chrome Arch */
+  .jukebox-arch {
+    height: 12px;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SMALL MOBILE (<480px)
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 479px) {
+  .neon-sign {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .neon-sign__note {
+    display: none;
+  }
+
+  .turntable {
+    width: 150px;
+    height: 150px;
+  }
+
+  .turntable__platter {
+    width: 130px;
+    height: 130px;
+  }
+
+  .turntable__record {
+    width: 118px;
+    height: 118px;
+  }
+
+  .record__label {
+    width: 40px;
+    height: 40px;
+  }
+
+  .turntable__arm {
+    display: none;
+  }
+
+  .about-photo__frame {
+    width: 140px;
+    height: 140px;
+  }
+
+  .about-photo__placeholder {
+    width: 76px;
+    height: 76px;
+  }
+
+  .about-photo__initials {
+    font-size: 1.5rem;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projects-filters {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .filter-btn {
+    flex: 1;
+    min-width: 70px;
+    font-size: 0.75rem;
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  /* GitHub Stats — 1 column on very small */
+  .github-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: var(--space-md);
+  }
+
+  .stat-card__value {
+    font-size: 1.8rem;
+  }
+
+  .contact-form-wrapper {
+    padding: var(--space-md);
+  }
+
+  .easter-egg__vinyl {
+    width: 80px;
+    height: 80px;
+  }
+
+  .welcome-vinyl {
+    width: 70px;
+    height: 70px;
+  }
+
+  .jukebox-controls {
+    gap: var(--space-sm);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LARGE DESKTOP (1400px+)
+   ═══════════════════════════════════════════════════════════════ */
+@media (min-width: 1400px) {
+  .jukebox-wrapper {
+    max-width: 1400px;
+  }
+
+  .jukebox-body {
+    grid-template-columns: 80px 1fr 80px auto;
+  }
+
+  .bubble-tube__glass {
+    width: 40px;
+  }
+
+  .turntable {
+    width: 300px;
+    height: 300px;
+  }
+
+  .turntable__platter {
+    width: 280px;
+    height: 280px;
+  }
+
+  .turntable__record {
+    width: 260px;
+    height: 260px;
+  }
+
+  .record__label {
+    width: 80px;
+    height: 80px;
+  }
+
+  .record__label-title {
+    font-size: 0.55rem;
+    max-width: 65px;
+  }
+
+  .button-panel {
+    min-width: 280px;
+  }
+
+  .juke-btn {
+    min-height: 60px;
+  }
+
+  .juke-btn__code {
+    font-size: 1.1rem;
+  }
+
+  .juke-btn__label {
+    font-size: 0.65rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════════════════════════════ */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .coin-overlay,
+  .boot-sequence,
+  .bubble-tube,
+  .turntable,
+  .vinyl-carousel,
+  .jukebox-controls,
+  .jukebox-arch,
+  .mobile-menu,
+  .konami-overlay,
+  .now-playing,
+  .jukebox-footer__neon-line {
+    display: none !important;
+  }
+
+  .jukebox-body {
+    display: block;
+    border: 1px solid #ccc;
+    background: none;
+    box-shadow: none;
+  }
+
+  .button-panel {
+    display: block;
+  }
+
+  .juke-btn {
+    display: inline-block;
+    background: none;
+    border: 1px solid #ccc;
+    color: black;
+  }
+
+  .content-display {
+    background: none;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  .neon-text {
+    text-shadow: none;
+    color: black;
+  }
+
+  .content-section {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}

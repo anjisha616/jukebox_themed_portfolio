@@ -1,0 +1,355 @@
+/* ============================================================
+   ANIMATIONS.CSS — All CSS Keyframe Animations
+   Wurlitzer Jukebox Portfolio
+   ============================================================ */
+
+/* ═══════════════════════════════════════════════════════════════
+   1. VINYL SPIN — 33⅓ RPM realistic speed
+      One full rotation = 1.8s (speed up for visual appeal)
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinning {
+  animation: spin 1.8s linear infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   2. NEON PULSE — Glow intensity oscillation
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes neon-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 7px currentColor,
+      0 0 10px currentColor,
+      0 0 21px currentColor,
+      0 0 42px currentColor;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   3. BUBBLE RISE — Circles moving up bubble tubes
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes bubble-rise {
+  0% {
+    bottom: -20px;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+  }
+  10% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(calc(-50% + 5px)) scale(1);
+  }
+  90% {
+    opacity: 0.6;
+    transform: translateX(calc(-50% - 3px)) scale(0.8);
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.3);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   4. BUTTON PRESS — Scale + brightness
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes button-press {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(0.92);
+    filter: brightness(1.3);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+.juke-btn.pressed {
+  animation: button-press 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   5. COIN DROP — Gravity fall + rotation
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes coin-float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+@keyframes coin-drop {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(-50%) translateY(120px) rotate(180deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(-50%) translateY(115px) rotate(200deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(-50%) translateY(140px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   6. CONTENT FADE IN — Slide up + opacity
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.animate-in {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   7. JUKEBOX POWER ON — Startup light sequence
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes jukebox-power-on {
+  0% {
+    opacity: 0;
+    filter: brightness(0);
+    transform: scale(0.98);
+  }
+  30% {
+    opacity: 0.3;
+    filter: brightness(0.3);
+  }
+  60% {
+    opacity: 0.7;
+    filter: brightness(0.7);
+    transform: scale(0.99);
+  }
+  80% {
+    filter: brightness(1.1);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+    transform: scale(1);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   8. SCROLLING TEXT — LED marquee effect
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   9. SKILL BAR FILL — Progress animation
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes skill-fill {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--fill);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   10. GLOW BORDER — Pulsing border glow
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes glow-border {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   11. TYPEWRITER EFFECT (cursor blink)
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes typewriter-cursor {
+  0%, 100% { border-right-color: transparent; }
+  50% { border-right-color: var(--neon-cyan); }
+}
+
+.typewriter-active {
+  border-right: 2px solid var(--neon-cyan);
+  animation: typewriter-cursor 0.8s step-end infinite;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   12. SHAKE — Error / attention animation
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.shake {
+  animation: shake 0.5s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   13. BOUNCE IN — Playful entrance
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.bounce-in {
+  animation: bounce-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   14. LIGHT SWEEP — Chrome reflection moving across surface
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes light-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.chrome-sweep {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.1) 45%,
+    rgba(255,255,255,0.3) 50%,
+    rgba(255,255,255,0.1) 55%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: light-sweep 3s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   15. RECORD SCRATCH — Visual wobble effect
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes record-scratch {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-5deg); }
+  40% { transform: rotate(3deg); }
+  60% { transform: rotate(-2deg); }
+  80% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.record-scratch {
+  animation: record-scratch 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   16. STAGGER CHILDREN — Cascading entrance for lists
+   ═══════════════════════════════════════════════════════════════ */
+.stagger-children > * {
+  opacity: 0;
+  animation: fade-in-up 0.4s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(9) { animation-delay: 0.45s; }
+.stagger-children > *:nth-child(10) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(11) { animation-delay: 0.55s; }
+.stagger-children > *:nth-child(12) { animation-delay: 0.6s; }
+
+/* ═══════════════════════════════════════════════════════════════
+   REDUCED MOTION — Accessibility preference
+   ═══════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .spinning,
+  .spinning-slow,
+  .bubble,
+  .neon-sign__note,
+  .blink-text,
+  .now-playing__text {
+    animation: none !important;
+  }
+
+  .now-playing__text {
+    padding-left: 0;
+    white-space: normal;
+  }
+}
