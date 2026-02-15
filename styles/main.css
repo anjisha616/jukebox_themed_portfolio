@@ -1,0 +1,348 @@
+/* ============================================================
+   MAIN.CSS — Base Styles, Reset, Typography, Utilities
+   1950s Wurlitzer Jukebox Portfolio
+   ============================================================ */
+
+/* ─── CSS Custom Properties ─── */
+:root {
+  /* Primary Jukebox Colors */
+  --juke-red: #8B0000;
+  --juke-red-light: #B22222;
+  --juke-gold: #FFD700;
+  --juke-gold-dark: #DAA520;
+
+  /* Accent Neon Colors */
+  --neon-cyan: #00FFFF;
+  --neon-pink: #FF1493;
+  --neon-yellow: #FFFF00;
+  --neon-green: #39FF14;
+  --neon-orange: #FF6600;
+
+  /* Background & Surface */
+  --bg-dark-wood: #2C1810;
+  --bg-cream: #F5E6D3;
+  --bg-body: #1a0e08;
+  --surface-dark: #1c1c1c;
+  --surface-panel: #2a1a10;
+
+  /* Chrome Gradient */
+  --chrome-1: #C0C0C0;
+  --chrome-2: #E8E8E8;
+  --chrome-3: #A0A0A0;
+  --chrome-4: #D4D4D4;
+  --chrome-gradient: linear-gradient(135deg, #A0A0A0 0%, #E8E8E8 25%, #C0C0C0 50%, #F0F0F0 75%, #A0A0A0 100%);
+
+  /* Text */
+  --text-white: #FFFFFF;
+  --text-cream: #F5E6D3;
+  --text-black: #000000;
+  --text-muted: #A89080;
+
+  /* Fonts */
+  --font-display: 'Bebas Neue', 'Impact', sans-serif;
+  --font-button: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-neon: 'Pacifico', 'Satisfy', cursive;
+  --font-body: 'Roboto Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Borders & Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-round: 50%;
+
+  /* Shadows */
+  --shadow-btn: 0 4px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+  --shadow-panel: 0 8px 32px rgba(0,0,0,0.6);
+  --shadow-neon-cyan: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+  --shadow-neon-pink: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Z-index layers */
+  --z-base: 1;
+  --z-panel: 10;
+  --z-controls: 20;
+  --z-overlay: 100;
+  --z-coin: 200;
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-body);
+  color: var(--text-cream);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Checkered diner floor pattern */
+  background-image:
+    linear-gradient(45deg, rgba(44,24,16,0.9) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(44,24,16,0.9) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(44,24,16,0.9) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(44,24,16,0.9) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0;
+  background-color: #231008;
+}
+
+/* ─── Typography ─── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
+
+p {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
+
+a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--neon-pink);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+/* ─── Utility Classes ─── */
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Skip Link (Accessibility) ─── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--neon-cyan);
+  color: var(--text-black);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-family: var(--font-button);
+  font-weight: 600;
+  z-index: 9999;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-md);
+}
+
+/* ─── Neon Text Effect ─── */
+.neon-text {
+  color: var(--neon-cyan);
+  text-shadow:
+    0 0 7px currentColor,
+    0 0 10px currentColor,
+    0 0 21px currentColor,
+    0 0 42px var(--neon-cyan),
+    0 0 82px var(--neon-cyan);
+  font-family: var(--font-display);
+}
+
+.neon-text--sm {
+  color: var(--neon-pink);
+  text-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 20px var(--neon-pink);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: var(--space-xl) 0 var(--space-md);
+}
+
+/* ─── Rainbow Text ─── */
+.rainbow-text {
+  background: linear-gradient(90deg,
+    #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-shift 3s linear infinite;
+}
+
+@keyframes rainbow-shift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ─── Retro Button (Reusable) ─── */
+.retro-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--chrome-gradient);
+  color: var(--text-black);
+  border: 2px solid var(--juke-gold);
+  border-radius: var(--radius-md);
+  font-family: var(--font-button);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow-btn);
+}
+
+.retro-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.5), 0 0 15px var(--juke-gold);
+}
+
+.retro-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.retro-btn--submit {
+  background: linear-gradient(135deg, var(--juke-gold), #FFA500, var(--juke-gold));
+  font-size: 1.1rem;
+  padding: var(--space-md) var(--space-xl);
+}
+
+/* ─── Content Section Base ─── */
+.content-section {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.content-section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-title {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  text-transform: uppercase;
+}
+
+.content-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.content-hint {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ─── Blinking Text ─── */
+.blink-text {
+  animation: blink 1.2s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ─── High Contrast Mode ─── */
+body.high-contrast {
+  --bg-body: #000000;
+  --bg-dark-wood: #000000;
+  --surface-dark: #111111;
+  --surface-panel: #111111;
+  --text-cream: #FFFFFF;
+  --text-muted: #CCCCCC;
+  background-image: none;
+  background-color: #000;
+}
+
+body.high-contrast .neon-text {
+  text-shadow: none;
+  color: #FFFFFF;
+}
+
+body.high-contrast .juke-btn {
+  border: 2px solid #FFFFFF;
+}
+
+/* ─── Selection Styling ─── */
+::selection {
+  background: var(--juke-gold);
+  color: var(--text-black);
+}
+
+::-moz-selection {
+  background: var(--juke-gold);
+  color: var(--text-black);
+}
+
+/* ─── Scrollbar Styling ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark-wood);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--juke-gold-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--juke-gold);
+}
