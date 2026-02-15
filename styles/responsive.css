@@ -1,0 +1,303 @@
+/* ===================================================
+   JUKEBOX PORTFOLIO — Responsive Styles
+   The jukebox adapts to different screen sizes
+   =================================================== */
+
+/* ============================================= */
+/* LARGE DESKTOP (1400px+)                        */
+/* ============================================= */
+@media (min-width: 1400px) {
+  .jukebox {
+    max-height: 900px;
+  }
+}
+
+/* ============================================= */
+/* DESKTOP DEFAULT (handled by main.css)          */
+/* ============================================= */
+
+/* ============================================= */
+/* TABLET / SMALLER DESKTOP (≤1024px)             */
+/* ============================================= */
+@media (max-width: 1024px) {
+  .jukebox {
+    max-width: 100%;
+    border-radius: 0;
+    max-height: 100vh;
+    border-left: none;
+    border-right: none;
+  }
+  .jukebox__controls {
+    width: 160px;
+    padding: 8px;
+    gap: 6px;
+  }
+  .controls__track-labels {
+    display: none;
+  }
+  .neon {
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+  }
+  .neon--pink { font-size: 1.3rem; }
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-section__profile {
+    width: auto;
+  }
+  .about-section__bio {
+    text-align: left;
+  }
+  .about-section__links {
+    justify-content: center;
+  }
+}
+
+/* ============================================= */
+/* TABLET PORTRAIT (≤768px)                       */
+/* ============================================= */
+@media (max-width: 768px) {
+  body {
+    align-items: stretch;
+  }
+  .jukebox {
+    height: 100vh;
+    max-height: none;
+    border-radius: 0;
+    border: none;
+  }
+
+  /* Header shrinks */
+  .jukebox__header {
+    height: 70px;
+  }
+  .neon {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+  .neon--pink { font-size: 1rem; }
+  .jukebox__header-trim { width: 40%; }
+
+  /* Body: stack controls below */
+  .jukebox__body {
+    flex-direction: column;
+  }
+
+  /* Hide bubble tubes on mobile */
+  .jukebox__bubble-tube {
+    display: none;
+  }
+
+  /* Center expands */
+  .jukebox__center {
+    flex: 1;
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  /* Hide turntable on small screens */
+  .jukebox__turntable {
+    height: 50px;
+  }
+  .turntable__platter { width: 45px; height: 45px; }
+  .turntable__platter .vinyl-record { width: 40px; height: 40px; }
+  .turntable__arm { display: none; }
+
+  /* Controls: horizontal strip at bottom */
+  .jukebox__controls {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    gap: 6px;
+    border-left: none;
+    border-top: 2px solid var(--chrome-dark);
+    overflow-y: visible;
+    max-height: none;
+  }
+  .controls__label { display: none; }
+  .controls__power { order: -1; }
+  .controls__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+  }
+  .track-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  .controls__track-labels { display: none; }
+  .controls__channel {
+    gap: 4px;
+  }
+  .controls__model { display: none; }
+
+  /* Footer */
+  .jukebox__footer { height: 36px; }
+  .jukebox__footer-chrome {
+    padding: 0 10px;
+    font-size: 0.45rem;
+  }
+  .jukebox__footer-info { display: none; }
+  .jukebox__coin-return { padding: 2px 10px; }
+
+  /* Projects grid */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* GitHub stats */
+  .github-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .github-graph {
+    grid-template-columns: repeat(26, 1fr);
+  }
+
+  /* Experience layout */
+  .exp-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .exp-item__date { width: auto; }
+}
+
+/* ============================================= */
+/* SMALL MOBILE (≤480px)                          */
+/* ============================================= */
+@media (max-width: 480px) {
+  .jukebox__header { height: 56px; }
+  .neon { font-size: 1rem; letter-spacing: 1px; }
+  .neon--pink { font-size: 0.85rem; }
+  .jukebox__neon-sign { gap: 6px; }
+
+  .now-playing__text { font-size: 0.7rem; letter-spacing: 2px; }
+
+  .jukebox__center { padding: 6px 8px; gap: 4px; }
+
+  .screen-content {
+    padding: 12px 14px;
+  }
+  .screen-content__title { font-size: 1rem; }
+  .screen-content__track-id { font-size: 0.6rem; }
+
+  /* Controls: tighter */
+  .jukebox__controls {
+    padding: 6px;
+    gap: 4px;
+  }
+  .track-btn {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
+  .channel-btn { width: 28px; height: 24px; font-size: 0.75rem; }
+  .vol-btn { width: 22px; height: 22px; font-size: 0.85rem; }
+  .vol-display { font-size: 0.75rem; }
+  .controls__power { display: none; }
+
+  /* About section */
+  .about-section__avatar { width: 70px; height: 70px; }
+  .about-section__name { font-size: 0.9rem; }
+  .about-section__bio p { font-size: 0.7rem; }
+  .about-link { font-size: 0.6rem; padding: 4px 8px; }
+  .system-status { display: none; }
+
+  /* Skills */
+  .skill-item__name { width: 65px; font-size: 0.65rem; }
+  .skill-item__bar { height: 6px; }
+
+  /* Footer */
+  .jukebox__footer { height: 30px; }
+  .jukebox__footer-chrome { font-size: 0.4rem; justify-content: center; }
+  .jukebox__coin-return { display: none; }
+  .jukebox__footer-copyright { display: none; }
+
+  /* Coin overlay */
+  .coin-overlay__text { font-size: 1.3rem; letter-spacing: 2px; }
+  .coin-overlay__btn { font-size: 0.95rem; padding: 12px 28px; }
+}
+
+/* ============================================= */
+/* VERY SMALL (≤360px)                            */
+/* ============================================= */
+@media (max-width: 360px) {
+  .jukebox__header { height: 48px; }
+  .jukebox__neon-sign { gap: 4px; }
+  .neon { font-size: 0.85rem; }
+  .neon--pink { font-size: 0.7rem; }
+
+  .jukebox__turntable { display: none; }
+
+  .screen-content { padding: 10px 10px; }
+
+  .controls__grid {
+    gap: 3px;
+  }
+  .track-btn { padding: 4px 6px; font-size: 0.65rem; }
+  .controls__volume { display: none; }
+}
+
+/* ============================================= */
+/* LANDSCAPE MOBILE                               */
+/* ============================================= */
+@media (max-height: 500px) and (orientation: landscape) {
+  .jukebox__header { height: 50px; }
+  .neon { font-size: 1rem; }
+  .neon--pink { font-size: 0.8rem; }
+
+  .jukebox__body { flex-direction: row; }
+  .jukebox__bubble-tube { display: none; }
+
+  .jukebox__turntable { display: none; }
+
+  .jukebox__controls {
+    width: 140px;
+    flex-direction: column;
+    border-left: 2px solid var(--chrome-dark);
+    border-top: none;
+  }
+  .controls__label { display: none; }
+  .controls__track-labels { display: none; }
+  .controls__model { display: none; }
+
+  .jukebox__footer { height: 28px; }
+}
+
+/* ============================================= */
+/* PRINT                                          */
+/* ============================================= */
+@media print {
+  body { background: white; color: black; }
+  .jukebox {
+    max-height: none;
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+  .coin-overlay,
+  .jukebox__bubble-tube,
+  .jukebox__turntable,
+  .jukebox__controls,
+  .jukebox__footer,
+  .jukebox__now-playing { display: none; }
+  .jukebox__screen {
+    border: none;
+    box-shadow: none;
+  }
+  .jukebox__screen::before,
+  .jukebox__screen::after { display: none; }
+  .screen-content {
+    display: block !important;
+    position: relative;
+    page-break-inside: avoid;
+    color: black;
+  }
+  .screen-content__title { color: #333; text-shadow: none; }
+  a { color: #0066cc; }
+}
