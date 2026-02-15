@@ -23,7 +23,7 @@
       <p class="coin-overlay__text">INSERT COIN</p>
       <p class="coin-overlay__subtext">TO PLAY</p>
       <button class="coin-overlay__btn" id="coinBtn" aria-label="Insert coin to enter portfolio">
-        <span class="coin-overlay__coin-icon">●</span>
+        <span class="coin-overlay__coin-icon" id="coinDrop">●</span>
       </button>
       <p class="coin-overlay__hint">Click the coin or press any key</p>
     </div>
@@ -43,8 +43,8 @@
       <!-- Neon title -->
       <div class="crown__title">
         <span class="crown__note">♪</span>
-        <span class="crown__name">ANJISHA'S</span>
-        <span class="crown__name crown__name--accent">JUKEBOX</span>
+        <span class="crown__name neon">ANJISHA'S</span>
+        <span class="crown__name crown__name--accent neon">JUKEBOX</span>
         <span class="crown__note">♪</span>
       </div>
       <!-- Decorative lights row -->
@@ -104,40 +104,61 @@
         <!-- SONG SELECTION BUTTONS (classic jukebox page rack) -->
         <div class="jukebox__selector" role="navigation" aria-label="Track selection">
           <div class="selector__row">
-            <button class="sel-btn active" data-track="a1" aria-label="About Me" title="About Me">
+            <button class="sel-btn track-btn active" data-track="a1" aria-label="About Me" title="About Me">
               <span class="sel-btn__code">A1</span>
               <span class="sel-btn__name">About Me</span>
             </button>
-            <button class="sel-btn" data-track="a2" aria-label="Skills" title="Skills">
+            <button class="sel-btn track-btn" data-track="a2" aria-label="Skills" title="Skills">
               <span class="sel-btn__code">A2</span>
               <span class="sel-btn__name">Skills</span>
             </button>
-            <button class="sel-btn" data-track="a3" aria-label="Experience" title="Experience">
+            <button class="sel-btn track-btn" data-track="a3" aria-label="Experience" title="Experience">
               <span class="sel-btn__code">A3</span>
               <span class="sel-btn__name">Experience</span>
             </button>
-            <button class="sel-btn" data-track="a4" aria-label="Certifications" title="Certifications">
+            <button class="sel-btn track-btn" data-track="a4" aria-label="Certifications" title="Certifications">
               <span class="sel-btn__code">A4</span>
               <span class="sel-btn__name">Certs</span>
             </button>
           </div>
           <div class="selector__row">
-            <button class="sel-btn" data-track="b1" aria-label="Projects" title="Projects">
+            <button class="sel-btn track-btn" data-track="b1" aria-label="Projects" title="Projects">
               <span class="sel-btn__code">B1</span>
               <span class="sel-btn__name">Projects</span>
             </button>
-            <button class="sel-btn" data-track="b2" aria-label="Proof of Work" title="Proof of Work">
+            <button class="sel-btn track-btn" data-track="b2" aria-label="Proof of Work" title="Proof of Work">
               <span class="sel-btn__code">B2</span>
               <span class="sel-btn__name">GitHub</span>
             </button>
-            <button class="sel-btn" data-track="b3" aria-label="Contact" title="Contact">
+            <button class="sel-btn track-btn" data-track="b3" aria-label="Contact" title="Contact">
               <span class="sel-btn__code">B3</span>
               <span class="sel-btn__name">Contact</span>
             </button>
-            <button class="sel-btn" data-track="b4" aria-label="Secret Track" title="???">
+            <button class="sel-btn track-btn" data-track="b4" aria-label="Secret Track" title="???">
               <span class="sel-btn__code">B4</span>
               <span class="sel-btn__name">???</span>
             </button>
+          </div>
+        </div>
+
+        <!-- TURNTABLE AREA -->
+        <div class="jukebox__turntable">
+          <div class="turntable__platter">
+            <div class="vinyl-record" id="mainVinyl">
+              <div class="vinyl-record__grooves"></div>
+              <div class="vinyl-record__label" id="vinylLabel"><span class="vinyl-record__label-text">A1</span></div>
+            </div>
+            <div class="turntable__arm" id="tonearm"></div>
+          </div>
+          <div class="turntable__controls">
+            <button class="ctrl-btn" id="prevTrack" aria-label="Previous track" title="Previous">◀</button>
+            <div class="turntable__vol">
+              <button class="ctrl-btn ctrl-btn--sm" id="volDown" aria-label="Volume down">−</button>
+              <span class="turntable__vol-display">VOL <span id="volDisplay">50</span></span>
+              <button class="ctrl-btn ctrl-btn--sm" id="volUp" aria-label="Volume up">+</button>
+            </div>
+            <button class="ctrl-btn" id="nextTrack" aria-label="Next track" title="Next">▶</button>
+            <span class="power-indicator" id="powerIndicator"></span>
           </div>
         </div>
 

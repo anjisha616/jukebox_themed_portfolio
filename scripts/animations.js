@@ -39,7 +39,7 @@
   }
 
   function animateSkillBars() {
-    const fills = document.querySelectorAll('#section-a2 .skill-item__fill');
+    const fills = document.querySelectorAll('#section-a2 .skill__fill');
     fills.forEach((fill, index) => {
       const targetWidth = fill.style.width;
       fill.style.width = '0';
@@ -67,14 +67,14 @@
       const activeSection = document.querySelector('.screen-content.active');
       if (activeSection) {
         const track = activeSection.dataset.track?.toLowerCase();
-        const screen = document.querySelector('.jukebox__screen');
+        const screen = document.querySelector('.window__screen');
         if (screen && track && trackColors[track]) {
           screen.style.setProperty('--screen-glow', trackColors[track]);
         }
       }
     });
 
-    const screenEl = document.querySelector('.jukebox__screen');
+    const screenEl = document.querySelector('.window__screen');
     if (screenEl) {
       observer.observe(screenEl, { childList: false, subtree: true, attributes: true });
     }
@@ -91,12 +91,12 @@
 
   // ---- Parallax-like subtle header glow ----
   function setupHeaderInteraction() {
-    const header = document.querySelector('.jukebox__header-arch');
+    const header = document.querySelector('.jukebox__crown');
     if (!header) return;
 
     document.addEventListener('mousemove', (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 20;
-      const neonSign = document.querySelector('.jukebox__neon-sign');
+      const neonSign = document.querySelector('.crown__name');
       if (neonSign) {
         neonSign.style.transform = `translateX(${x * 0.3}px)`;
       }
