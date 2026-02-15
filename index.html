@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjisha's Jukebox Portfolio 🎵</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23000'/><circle cx='50' cy='50' r='15' fill='%23FFD700'/></svg>">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500&family=Pacifico&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Coin Insert Overlay -->
+    <div id="coinOverlay" class="coin-overlay active">
+        <div class="coin-container">
+            <div class="coin"></div>
+            <div class="coin-slot"></div>
+            <p class="insert-text">INSERT COIN TO CONTINUE</p>
+        </div>
+    </div>
+
+    <!-- Main Jukebox Container -->
+    <div class="jukebox-container">
+        <!-- Neon Header -->
+        <header class="jukebox-header">
+            <h1 class="neon-sign">🎵 ANJISHA'S JUKEBOX 🎵</h1>
+        </header>
+
+        <!-- Main Jukebox Body -->
+        <div class="jukebox-body">
+            <!-- Left Panel: Bubble Tubes & Vinyl Display -->
+            <div class="left-panel">
+                <!-- Bubble Tubes -->
+                <div class="bubble-tube left-tube">
+                    <div class="bubble" style="animation-delay: 0s"></div>
+                    <div class="bubble" style="animation-delay: 1.5s"></div>
+                    <div class="bubble" style="animation-delay: 3s"></div>
+                </div>
+
+                <!-- Turntable -->
+                <div class="turntable-container">
+                    <div class="turntable">
+                        <div class="vinyl-record" id="vinylRecord">
+                            <div class="vinyl-center"></div>
+                            <div class="vinyl-grooves"></div>
+                            <div class="vinyl-label" id="vinylLabel">ABOUT ME</div>
+                        </div>
+                        <div class="tonearm" id="tonearm"></div>
+                    </div>
+                </div>
+
+                <!-- Bubble Tubes -->
+                <div class="bubble-tube right-tube">
+                    <div class="bubble" style="animation-delay: 0.5s"></div>
+                    <div class="bubble" style="animation-delay: 2s"></div>
+                    <div class="bubble" style="animation-delay: 3.5s"></div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Button Grid & Now Playing -->
+            <div class="right-panel">
+                <!-- Button Grid -->
+                <div class="button-grid">
+                    <button class="jukebox-button" data-section="about" data-code="A1">
+                        <span class="button-code">A1</span>
+                        <span class="button-label">About Me</span>
+                    </button>
+                    <button class="jukebox-button" data-section="skills" data-code="A2">
+                        <span class="button-code">A2</span>
+                        <span class="button-label">Skills</span>
+                    </button>
+                    <button class="jukebox-button" data-section="experience" data-code="A3">
+                        <span class="button-code">A3</span>
+                        <span class="button-label">Experience</span>
+                    </button>
+                    <button class="jukebox-button" data-section="certifications" data-code="A4">
+                        <span class="button-code">A4</span>
+                        <span class="button-label">Certifications</span>
+                    </button>
+                    <button class="jukebox-button" data-section="projects" data-code="B1">
+                        <span class="button-code">B1</span>
+                        <span class="button-label">Projects</span>
+                    </button>
+                    <button class="jukebox-button" data-section="proof" data-code="B2">
+                        <span class="button-code">B2</span>
+                        <span class="button-label">Proof of Work</span>
+                    </button>
+                    <button class="jukebox-button" data-section="contact" data-code="B3">
+                        <span class="button-code">B3</span>
+                        <span class="button-label">Contact</span>
+                    </button>
+                    <button class="jukebox-button secret-button" data-section="secret" data-code="B4">
+                        <span class="button-code">B4</span>
+                        <span class="button-label">???</span>
+                    </button>
+                </div>
+
+                <!-- Now Playing Display -->
+                <div class="now-playing">
+                    <div class="led-display">
+                        <span id="nowPlayingText">♪ NOW PLAYING: ABOUT ME ♪</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="volume-control">
+                <label for="volumeSlider">VOLUME</label>
+                <div class="dial-container">
+                    <div class="volume-dial" id="volumeDial"></div>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="50">
+                </div>
+            </div>
+            <div class="coin-slot-control">
+                <div class="slot"></div>
+                <p>COIN SLOT</p>
+            </div>
+            <div class="lights-control">
+                <div class="indicator-light red"></div>
+                <div class="indicator-light yellow"></div>
+                <div class="indicator-light green active"></div>
+                <p>STATUS</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Display Area -->
+    <div class="content-display" id="contentDisplay">
+        <!-- About Me Section -->
+        <section class="content-section active" id="about">
+            <div class="vinyl-frame">
+                <div class="profile-photo">AP</div>
+            </div>
+            <h2>Anjisha Pun</h2>
+            <h3>UI/UX Designer & Frontend Developer</h3>
+            <p class="location">📍 Butwal, Nepal</p>
+            <p class="bio typewriter">
+                UI/UX designer and frontend developer specializing in crafting intuitive, visually compelling digital experiences. Proficient in HTML, CSS, and JavaScript, with growing expertise in React and Next.js. Combines design thinking with technical implementation, backed by knowledge in Django and Python for full-stack perspective.
+            </p>
+            <div class="social-buttons">
+                <a href="https://github.com/anjisha616" target="_blank" class="social-btn">GitHub</a>
+                <a href="https://www.linkedin.com/in/anjisha-pun-aaa1a6349/" target="_blank" class="social-btn">LinkedIn</a>
+                <a href="mailto:punangisha@gmail.com" class="social-btn">Email</a>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="content-section" id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🎨 Design Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Canva</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>💻 Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React <small>(learning)</small></span>
+                        <span class="skill-tag">Next.js <small>(learning)</small></span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>🔧 Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>🌟 Non-Technical</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Presentation</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Musician</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="content-section" id="experience">
+            <h2>Experience</h2>
+            <div class="experience-container">
+                <div class="under-construction">
+                    <h3>🚧 Currently Seeking Opportunities 🚧</h3>
+                    <p>Building portfolio and honing skills</p>
+                    <p>Ready to bring creative solutions to your team!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="content-section" id="certifications">
+            <h2>Certifications & Courses</h2>
+            <div class="under-construction">
+                <h3>📚 Coming Soon!</h3>
+                <p>Check back later for certifications and courses</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="content-section" id="projects">
+            <h2>Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="github">GitHub</button>
+                <button class="filter-btn" data-filter="figma">Figma</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <div class="loading-spinner">
+                    <div class="vinyl-spinner"></div>
+                    <p>Loading projects...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof of Work Section -->
+        <section class="content-section" id="proof">
+            <h2>Proof of Work</h2>
+            <div class="github-stats" id="githubStats">
+                <div class="loading-spinner">
+                    <div class="vinyl-spinner"></div>
+                    <p>Loading GitHub activity...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="content-section" id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <a href="mailto:punangisha@gmail.com">punangisha@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <a href="https://www.linkedin.com/in/anjisha-pun-aaa1a6349/" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💻</span>
+                    <a href="https://github.com/anjisha616" target="_blank">GitHub Profile</a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Drop a Coin 🪙</h3>
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="send-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Secret Section -->
+        <section class="content-section" id="secret">
+            <h2>🎉 You Found The Secret Track! 🎉</h2>
+            <div class="secret-content">
+                <p>Congratulations! You discovered the hidden channel!</p>
+                <p>Here's a fun fact: The Wurlitzer 1015 jukebox was nicknamed "The Bubbler" because of its iconic bubble tubes!</p>
+                <div class="secret-image">🎸🎵🎸</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
