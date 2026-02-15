@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anjisha Pun — UI/UX Designer & Frontend Developer. Interactive jukebox portfolio.">
+  <title>Anjisha Pun | UI/UX Designer & Frontend Developer</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231a1a2e'/><circle cx='50' cy='50' r='18' fill='%23ff6b35'/><circle cx='50' cy='50' r='6' fill='%231a1a2e'/></svg>" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Pacifico&family=Roboto+Mono:wght@400;500&family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <a href="#content-display" class="skip-link">Skip to content</a>
+
+  <!-- COIN OVERLAY -->
+  <div id="coinOverlay" class="coin-overlay" role="dialog" aria-label="Insert coin to start">
+    <div class="coin-overlay__content">
+      <div class="coin-overlay__jukebox-silhouette" aria-hidden="true"></div>
+      <p class="coin-overlay__text">INSERT COIN</p>
+      <p class="coin-overlay__subtext">TO PLAY</p>
+      <button class="coin-overlay__btn" id="coinBtn" aria-label="Insert coin to enter portfolio">
+        <span class="coin-overlay__coin-icon">●</span>
+      </button>
+      <p class="coin-overlay__hint">Click the coin or press any key</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- THE JUKEBOX                               -->
+  <!-- ========================================= -->
+  <div class="jukebox" id="jukebox" aria-label="Jukebox Portfolio">
+
+    <!-- ===== CROWN / TOP ARCH ===== -->
+    <div class="jukebox__crown">
+      <!-- Decorative arch layers -->
+      <div class="crown__arch crown__arch--outer"></div>
+      <div class="crown__arch crown__arch--middle"></div>
+      <div class="crown__arch crown__arch--inner"></div>
+      <!-- Neon title -->
+      <div class="crown__title">
+        <span class="crown__note">♪</span>
+        <span class="crown__name">ANJISHA'S</span>
+        <span class="crown__name crown__name--accent">JUKEBOX</span>
+        <span class="crown__note">♪</span>
+      </div>
+      <!-- Decorative lights row -->
+      <div class="crown__lights" aria-hidden="true">
+        <span class="crown-light"></span><span class="crown-light"></span>
+        <span class="crown-light"></span><span class="crown-light"></span>
+        <span class="crown-light"></span><span class="crown-light"></span>
+        <span class="crown-light"></span><span class="crown-light"></span>
+        <span class="crown-light"></span><span class="crown-light"></span>
+        <span class="crown-light"></span><span class="crown-light"></span>
+        <span class="crown-light"></span><span class="crown-light"></span>
+        <span class="crown-light"></span><span class="crown-light"></span>
+      </div>
+      <!-- Chrome trim strip -->
+      <div class="crown__chrome-strip"></div>
+    </div>
+
+    <!-- ===== UPPER CHROME BAND ===== -->
+    <div class="jukebox__chrome-band">
+      <div class="chrome-rivet"></div>
+      <div class="chrome-band__center">
+        <span class="chrome-band__star">★</span>
+        <span class="chrome-band__text">SELECT YOUR TRACK</span>
+        <span class="chrome-band__star">★</span>
+      </div>
+      <div class="chrome-rivet"></div>
+    </div>
+
+    <!-- ===== MAIN BODY ===== -->
+    <div class="jukebox__body">
+
+      <!-- LEFT BUBBLE TUBE -->
+      <div class="jukebox__pillar jukebox__pillar--left" aria-hidden="true">
+        <div class="pillar__chrome-cap"></div>
+        <div class="pillar__tube">
+          <div class="bubble"></div><div class="bubble"></div>
+          <div class="bubble"></div><div class="bubble"></div>
+          <div class="bubble"></div><div class="bubble"></div>
+          <div class="bubble"></div><div class="bubble"></div>
+          <div class="bubble"></div><div class="bubble"></div>
+        </div>
+        <div class="pillar__chrome-cap"></div>
+      </div>
+
+      <!-- CENTER CONTENT AREA -->
+      <div class="jukebox__center">
+
+        <!-- Now Playing Marquee -->
+        <div class="jukebox__marquee">
+          <div class="marquee__frame">
+            <span class="marquee__icon">♫</span>
+            <span class="marquee__text" id="nowPlayingText">NOW PLAYING: ABOUT ME</span>
+            <span class="marquee__icon">♫</span>
+          </div>
+        </div>
+
+        <!-- SONG SELECTION BUTTONS (classic jukebox page rack) -->
+        <div class="jukebox__selector" role="navigation" aria-label="Track selection">
+          <div class="selector__row">
+            <button class="sel-btn active" data-track="a1" aria-label="About Me" title="About Me">
+              <span class="sel-btn__code">A1</span>
+              <span class="sel-btn__name">About Me</span>
+            </button>
+            <button class="sel-btn" data-track="a2" aria-label="Skills" title="Skills">
+              <span class="sel-btn__code">A2</span>
+              <span class="sel-btn__name">Skills</span>
+            </button>
+            <button class="sel-btn" data-track="a3" aria-label="Experience" title="Experience">
+              <span class="sel-btn__code">A3</span>
+              <span class="sel-btn__name">Experience</span>
+            </button>
+            <button class="sel-btn" data-track="a4" aria-label="Certifications" title="Certifications">
+              <span class="sel-btn__code">A4</span>
+              <span class="sel-btn__name">Certs</span>
+            </button>
+          </div>
+          <div class="selector__row">
+            <button class="sel-btn" data-track="b1" aria-label="Projects" title="Projects">
+              <span class="sel-btn__code">B1</span>
+              <span class="sel-btn__name">Projects</span>
+            </button>
+            <button class="sel-btn" data-track="b2" aria-label="Proof of Work" title="Proof of Work">
+              <span class="sel-btn__code">B2</span>
+              <span class="sel-btn__name">GitHub</span>
+            </button>
+            <button class="sel-btn" data-track="b3" aria-label="Contact" title="Contact">
+              <span class="sel-btn__code">B3</span>
+              <span class="sel-btn__name">Contact</span>
+            </button>
+            <button class="sel-btn" data-track="b4" aria-label="Secret Track" title="???">
+              <span class="sel-btn__code">B4</span>
+              <span class="sel-btn__name">???</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Chrome separator -->
+        <div class="jukebox__chrome-divider"></div>
+
+        <!-- DISPLAY WINDOW (the screen where content shows) -->
+        <div class="jukebox__window">
+          <div class="window__chrome-frame">
+            <div class="window__screen" id="content-display" role="main">
+
+              <!-- A1: About Me -->
+              <div class="screen-content active" id="section-a1" data-track="A1" aria-label="About Me">
+                <div class="sc-header">
+                  <span class="sc-header__id">A1</span>
+                  <h2 class="sc-header__title">About Me</h2>
+                </div>
+                <div class="sc-body">
+                  <div class="about">
+                    <div class="about__profile">
+                      <div class="about__avatar">
+                        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="60" cy="60" r="58" fill="#1a0e09" stroke="#FFD700" stroke-width="3"/>
+                          <circle cx="60" cy="48" r="22" fill="#ff6b35" opacity="0.7"/>
+                          <ellipse cx="60" cy="95" rx="32" ry="25" fill="#ff6b35" opacity="0.5"/>
+                          <text x="60" y="68" text-anchor="middle" fill="#FFD700" font-size="28" font-family="Bebas Neue, sans-serif">AP</text>
+                        </svg>
+                      </div>
+                      <h3 class="about__name">Anjisha Pun</h3>
+                      <p class="about__role">UI/UX Designer &amp; Frontend Developer</p>
+                      <p class="about__location">📍 Butwal, Nepal</p>
+                      <div class="about__status"><span class="status-dot"></span> Open to opportunities</div>
+                    </div>
+                    <div class="about__bio">
+                      <p>UI/UX designer and frontend developer specializing in crafting intuitive, visually compelling digital experiences.</p>
+                      <p>Proficient in HTML, CSS, and JavaScript, with growing expertise in React and Next.js. Combines design thinking with technical implementation, backed by knowledge in Django and Python for full-stack perspective.</p>
+                      <div class="about__links">
+                        <a href="mailto:punangisha@gmail.com" class="about-link">✉ Email</a>
+                        <a href="https://github.com/anjisha616" target="_blank" rel="noopener" class="about-link">⌨ GitHub</a>
+                        <a href="https://www.linkedin.com/in/anjisha-pun-aaa1a6349/" target="_blank" rel="noopener" class="about-link">💼 LinkedIn</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- A2: Skills -->
+              <div class="screen-content" id="section-a2" data-track="A2" aria-label="Skills">
+                <div class="sc-header"><span class="sc-header__id">A2</span><h2 class="sc-header__title">Skills</h2></div>
+                <div class="sc-body">
+                  <div class="skills">
+                    <div class="skills__group">
+                      <h3 class="skills__heading">⎔ Design</h3>
+                      <div class="skill"><span class="skill__name">Figma</span><div class="skill__bar"><div class="skill__fill" style="width:90%"></div></div></div>
+                      <div class="skill"><span class="skill__name">Canva</span><div class="skill__bar"><div class="skill__fill" style="width:85%"></div></div></div>
+                    </div>
+                    <div class="skills__group">
+                      <h3 class="skills__heading">⟨/⟩ Frontend</h3>
+                      <div class="skill"><span class="skill__name">HTML</span><div class="skill__bar"><div class="skill__fill" style="width:95%"></div></div></div>
+                      <div class="skill"><span class="skill__name">CSS</span><div class="skill__bar"><div class="skill__fill" style="width:90%"></div></div></div>
+                      <div class="skill"><span class="skill__name">JavaScript</span><div class="skill__bar"><div class="skill__fill" style="width:80%"></div></div></div>
+                      <div class="skill"><span class="skill__name">React</span><div class="skill__bar"><div class="skill__fill skill__fill--learn" style="width:40%"></div></div><span class="skill__badge">LEARNING</span></div>
+                      <div class="skill"><span class="skill__name">Next.js</span><div class="skill__bar"><div class="skill__fill skill__fill--learn" style="width:30%"></div></div><span class="skill__badge">LEARNING</span></div>
+                    </div>
+                    <div class="skills__group">
+                      <h3 class="skills__heading">⚙ Backend</h3>
+                      <div class="skill"><span class="skill__name">Python</span><div class="skill__bar"><div class="skill__fill" style="width:65%"></div></div></div>
+                      <div class="skill"><span class="skill__name">Django</span><div class="skill__bar"><div class="skill__fill" style="width:50%"></div></div></div>
+                    </div>
+                    <div class="skills__group">
+                      <h3 class="skills__heading">✦ Soft Skills</h3>
+                      <div class="skills__tags"><span class="skill-tag">Presentation</span><span class="skill-tag">Communication</span><span class="skill-tag">Musician</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- A3: Experience -->
+              <div class="screen-content" id="section-a3" data-track="A3" aria-label="Experience">
+                <div class="sc-header"><span class="sc-header__id">A3</span><h2 class="sc-header__title">Experience</h2></div>
+                <div class="sc-body">
+                  <div class="experience">
+                    <div class="exp-item">
+                      <div class="exp-item__date">2024 — PRESENT</div>
+                      <div class="exp-item__card">
+                        <h3>Building Portfolio &amp; Learning</h3>
+                        <p class="exp-item__sub">Self-directed · Butwal, Nepal</p>
+                        <p>Actively building projects to strengthen frontend skills. Developing real-world applications with HTML, CSS, JavaScript, and React while deepening UI/UX design expertise through Figma.</p>
+                        <div class="exp-item__tags"><span>HTML/CSS/JS</span><span>React</span><span>Figma</span><span>UI/UX</span></div>
+                      </div>
+                    </div>
+                    <div class="exp-item">
+                      <div class="exp-item__date">2024</div>
+                      <div class="exp-item__card">
+                        <h3>Personal &amp; Freelance Projects</h3>
+                        <p class="exp-item__sub">Independent</p>
+                        <p>Designed and developed web projects including portfolio sites, clone projects for practice, and original designs.</p>
+                        <div class="exp-item__tags"><span>Web Dev</span><span>UI Design</span><span>Python</span></div>
+                      </div>
+                    </div>
+                    <div class="exp-cta">
+                      <p>🎯 Actively seeking frontend developer and UI/UX design roles.</p>
+                      <button class="retro-btn" onclick="selectTrack('b3')">Drop me a line → B3</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- A4: Certifications -->
+              <div class="screen-content" id="section-a4" data-track="A4" aria-label="Certifications">
+                <div class="sc-header"><span class="sc-header__id">A4</span><h2 class="sc-header__title">Certifications</h2></div>
+                <div class="sc-body">
+                  <div class="coming-soon">
+                    <div class="coming-soon__icon">🚧</div>
+                    <h3>Under Construction</h3>
+                    <p>This track is still being recorded...</p>
+                    <div class="coming-soon__bar"><span>▓▓▓▓▓▓▓▓░░░░░░░░</span> 50%</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- B1: Projects -->
+              <div class="screen-content" id="section-b1" data-track="B1" aria-label="Projects">
+                <div class="sc-header"><span class="sc-header__id">B1</span><h2 class="sc-header__title">Projects</h2></div>
+                <div class="sc-body">
+                  <div class="projects">
+                    <div class="projects__filters">
+                      <button class="filter-btn active" data-filter="all">ALL</button>
+                      <button class="filter-btn" data-filter="github">GITHUB</button>
+                      <button class="filter-btn" data-filter="figma">FIGMA</button>
+                    </div>
+                    <div class="projects__grid" id="projectsGrid">
+                      <div class="project-loading"><div class="vinyl-spinner"></div><p>Loading tracks...</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- B2: GitHub -->
+              <div class="screen-content" id="section-b2" data-track="B2" aria-label="Proof of Work">
+                <div class="sc-header"><span class="sc-header__id">B2</span><h2 class="sc-header__title">Proof of Work</h2></div>
+                <div class="sc-body">
+                  <div class="github-section">
+                    <div class="github-stats" id="githubStats">
+                      <div class="github-stat"><div class="github-stat__num" id="totalRepos">--</div><div class="github-stat__lbl">REPOS</div></div>
+                      <div class="github-stat"><div class="github-stat__num" id="totalCommits">--</div><div class="github-stat__lbl">COMMITS</div></div>
+                      <div class="github-stat"><div class="github-stat__num" id="topLanguage">--</div><div class="github-stat__lbl">TOP LANG</div></div>
+                      <div class="github-stat"><div class="github-stat__num" id="totalStars">--</div><div class="github-stat__lbl">STARS</div></div>
+                    </div>
+                    <div class="github-graph-wrap">
+                      <h3>Contribution Activity</h3>
+                      <div class="github-graph" id="contributionGraph"></div>
+                      <div class="github-graph__legend"><span>Less</span><span class="gbox" style="background:#161b22"></span><span class="gbox" style="background:#0e4429"></span><span class="gbox" style="background:#006d32"></span><span class="gbox" style="background:#26a641"></span><span class="gbox" style="background:#39d353"></span><span>More</span></div>
+                    </div>
+                    <div class="github-repos" id="pinnedRepos"></div>
+                    <a href="https://github.com/anjisha616" target="_blank" rel="noopener" class="github-link">⌨ View Full GitHub Profile →</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- B3: Contact -->
+              <div class="screen-content" id="section-b3" data-track="B3" aria-label="Contact">
+                <div class="sc-header"><span class="sc-header__id">B3</span><h2 class="sc-header__title">Contact</h2></div>
+                <div class="sc-body">
+                  <div class="contact">
+                    <div class="contact__info">
+                      <p>Want to work together? Drop me a line!</p>
+                      <div class="contact__details">
+                        <a href="mailto:punangisha@gmail.com" class="contact-item">✉ punangisha@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/anjisha-pun-aaa1a6349/" target="_blank" rel="noopener" class="contact-item">💼 LinkedIn</a>
+                        <a href="https://github.com/anjisha616" target="_blank" rel="noopener" class="contact-item">⌨ GitHub</a>
+                        <span class="contact-item">📍 Butwal, Nepal</span>
+                      </div>
+                    </div>
+                    <form class="contact__form" id="contactForm" novalidate>
+                      <div class="form-group"><label for="name">NAME</label><input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name"><span class="form-error" id="nameError"></span></div>
+                      <div class="form-group"><label for="email">EMAIL</label><input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email"><span class="form-error" id="emailError"></span></div>
+                      <div class="form-group"><label for="message">MESSAGE</label><textarea id="message" name="message" placeholder="Your message..." rows="3" required></textarea><span class="form-error" id="messageError"></span></div>
+                      <button type="submit" class="retro-btn retro-btn--full" id="submitBtn"><span class="btn-text">🪙 Drop a Coin — Send</span><span class="btn-loading">⟳ Sending...</span></button>
+                      <div class="form-success" id="formSuccess" hidden>✅ Message sent!</div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- B4: Easter Egg -->
+              <div class="screen-content" id="section-b4" data-track="B4" aria-label="Secret Track">
+                <div class="sc-header"><span class="sc-header__id">B4</span><h2 class="sc-header__title">Secret Track</h2></div>
+                <div class="sc-body">
+                  <div class="easter-egg">
+                    <div class="vinyl-record vinyl-record--large"><div class="vinyl-record__grooves"></div><div class="vinyl-record__label"><span>B4</span></div></div>
+                    <h3>🎵 You found the hidden track!</h3>
+                    <p>Thanks for exploring my jukebox portfolio.</p>
+                    <p>Fun fact: I'm also a musician! 🎸</p>
+                    <pre class="easter-egg__art">  ♪ ♫ ♪ ♫ ♪
+ ┌─────────┐
+ │  ◉   ◉  │
+ │    ▽    │
+ │  ╰───╯  │
+ └─────────┘
+Keep grooving!</pre>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /.window__screen -->
+          </div><!-- /.window__chrome-frame -->
+        </div><!-- /.jukebox__window -->
+
+      </div><!-- /.jukebox__center -->
+
+      <!-- RIGHT BUBBLE TUBE -->
+      <div class="jukebox__pillar jukebox__pillar--right" aria-hidden="true">
+        <div class="pillar__chrome-cap"></div>
+        <div class="pillar__tube">
+          <div class="bubble"></div><div class="bubble"></div>
+          <div class="bubble"></div><div class="bubble"></div>
+          <div class="bubble"></div><div class="bubble"></div>
+          <div class="bubble"></div><div class="bubble"></div>
+          <div class="bubble"></div><div class="bubble"></div>
+        </div>
+        <div class="pillar__chrome-cap"></div>
+      </div>
+
+    </div><!-- /.jukebox__body -->
+
+    <!-- ===== LOWER CHROME BAND ===== -->
+    <div class="jukebox__chrome-band jukebox__chrome-band--lower">
+      <div class="chrome-rivet"></div>
+      <div class="chrome-band__center">
+        <span class="chrome-band__text">★ MODEL APJ-2025 ★ MADE IN NEPAL ★</span>
+      </div>
+      <div class="chrome-rivet"></div>
+    </div>
+
+    <!-- ===== SPEAKER GRILLE ===== -->
+    <div class="jukebox__speaker" aria-hidden="true">
+      <div class="speaker__grille">
+        <div class="speaker__slat"></div><div class="speaker__slat"></div>
+        <div class="speaker__slat"></div><div class="speaker__slat"></div>
+        <div class="speaker__slat"></div><div class="speaker__slat"></div>
+        <div class="speaker__slat"></div><div class="speaker__slat"></div>
+        <div class="speaker__slat"></div><div class="speaker__slat"></div>
+        <div class="speaker__slat"></div>
+      </div>
+      <!-- Coin slot -->
+      <div class="speaker__coin-slot">
+        <div class="coin-slot__opening"></div>
+        <span class="coin-slot__label">INSERT COIN</span>
+      </div>
+    </div>
+
+    <!-- ===== BASE / FEET ===== -->
+    <div class="jukebox__base">
+      <div class="base__foot"></div>
+      <div class="base__info">8 Tracks · Press A1–B4 · Arrow Keys · © 2025 Anjisha Pun</div>
+      <div class="base__foot"></div>
+    </div>
+
+  </div><!-- /.jukebox -->
+
+  <script src="scripts/github-api.js"></script>
+  <script src="scripts/animations.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
