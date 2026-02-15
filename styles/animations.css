@@ -1,0 +1,188 @@
+/* ===================================================
+   JUKEBOX PORTFOLIO — Animations
+   =================================================== */
+
+/* ---------- Coin Drop ---------- */
+@keyframes coinDrop {
+  0%   { opacity: 1; transform: translateX(-50%) translateY(0) rotate(0); }
+  60%  { opacity: 1; transform: translateX(-50%) translateY(110px) rotate(360deg); }
+  80%  { opacity: 0.8; transform: translateX(-50%) translateY(105px) rotate(380deg); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(130px) rotate(400deg); }
+}
+
+/* ---------- Spin (vinyl) ---------- */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ---------- Bubble Rise ---------- */
+@keyframes bubbleRise {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0;
+  }
+  10% { opacity: 0.7; }
+  50% { opacity: 0.5; }
+  90% { opacity: 0.2; }
+  100% {
+    transform: translateX(calc(-50% + var(--drift, 5px))) translateY(-600px);
+    opacity: 0;
+  }
+}
+.bubble:nth-child(odd) { --drift: -6px; }
+.bubble:nth-child(even) { --drift: 8px; }
+.bubble:nth-child(3n) { --drift: -3px; }
+
+/* ---------- Neon Pulse ---------- */
+@keyframes neonPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.75; }
+}
+
+/* ---------- Neon Flicker ---------- */
+@keyframes neonFlicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+  }
+}
+
+/* ---------- Content Fade In ---------- */
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Status Pulse (green dot) ---------- */
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 6px currentColor;
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 3px currentColor;
+  }
+}
+
+/* ---------- LED Scroll (marquee for Now Playing) ---------- */
+@keyframes ledScroll {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ---------- Button Press ---------- */
+@keyframes buttonPress {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0.92); filter: brightness(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* ---------- Slide Up (for screen content) ---------- */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Glow Pulse (for active button) ---------- */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 107, 53, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(255, 107, 53, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.track-btn.active {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* ---------- Record Scratch (easter egg) ---------- */
+@keyframes recordScratch {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-15deg); }
+  50%  { transform: rotate(10deg); }
+  75%  { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ---------- Jukebox Power On ---------- */
+@keyframes powerOn {
+  0% {
+    opacity: 0;
+    filter: brightness(0);
+  }
+  30% {
+    opacity: 0.5;
+    filter: brightness(0.5);
+  }
+  60% {
+    opacity: 0.8;
+    filter: brightness(0.8);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+/* ---------- Screen Flicker (CRT effect) ---------- */
+@keyframes screenFlicker {
+  0%   { opacity: 0.97; }
+  5%   { opacity: 1; }
+  10%  { opacity: 0.98; }
+  15%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+.jukebox__screen {
+  animation: screenFlicker 8s infinite;
+}
+
+/* ---------- Skill Bar Fill Animation ---------- */
+.screen-content.active .skill-item__fill {
+  animation: skillFill 0.8s ease-out forwards;
+}
+@keyframes skillFill {
+  from { width: 0; }
+}
+
+/* ---------- Float (decorative) ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+/* ---------- Typewriter Effect for Now Playing ---------- */
+@keyframes typewriter {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .bubble { display: none; }
+  .vinyl-record, .vinyl-record--large {
+    animation: none !important;
+  }
+}
